@@ -1,25 +1,13 @@
  src="https://embed.twitch.tv/embed/v1.js"
+ let embedCreado = false;
  
-        // ═══════════════════════════════════════════
-        //                    
-        // ═══════════════════════════════════════════
-         // const STREAMER  = ;                   //  
-         // const DOMINIO   = ;      // 
-         // const CLIENT_ID = ;               // 
-         // const TOKEN     = ;            // el  
-        // ═══════════════════════════════════════════
- 
-        let embedCreado = false;
- 
-        function mostrarVivo(datos) {
-            document.getElementById("stream-embed").style.display = "block";
-            document.getElementById("offline-card").style.display = "none";
-            document.getElementById("live-dot").classList.add("en-vivo");
-            document.getElementById("live-label").textContent =
-                "LIVE — " + datos.viewer_count.toLocaleString("es-AR") + " espectadores";
- 
-            if (!embedCreado) {
-                new Twitch.Embed("stream-embed", {
+function mostrarVivo(datos) {
+document.getElementById("stream-embed").style.display = "block";
+document.getElementById("offline-card").style.display = "none";
+document.getElementById("live-dot").classList.add("en-vivo");
+document.getElementById("live-label").textContent ="LIVE — " + datos.viewer_count.toLocaleString("es-AR") + " espectadores";
+ if (!embedCreado) {
+new Twitch.Embed("stream-embed", {
                     width: "100%",
                     height: "100%",
                     channel: STREAMER,
